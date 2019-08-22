@@ -71,5 +71,19 @@ function assemble(assembleInput,num){
     return str+"----------------"+"\n"+num;
     }
 
-
-module.exports = {countProducts,fetchProduct,generateReceiptItems,countTotalPrice,assemble};
+function generateReceipts(codes) {
+        let reciptItems = generateReceiptItems(codes);
+        let price = countTotalPrice(reciptItems);
+        let result = assemble(reciptItems, price);
+        return result;
+      }
+     
+      module.exports = {
+       db,
+        countProducts,
+        fetchProduct,
+        generateReceiptItems,
+        countTotalPrice,
+        assemble,
+        generateReceipts
+      };

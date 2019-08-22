@@ -1,4 +1,4 @@
-const {countProducts,fetchProduct,generateReceiptItems,countTotalPrice,assemble} = require('../main');
+const {countProducts,fetchProduct,generateReceiptItems,countTotalPrice,assemble,generateReceipts} = require('../main');
 
 
 const countedCodes=countProducts(['0003','0003','0001']);
@@ -30,3 +30,12 @@ it('should printreceip',()=>{
     console.log(text);
     })
 
+    it('should generateReceipts', () => {
+     var generateReceipts=
+        [
+            {name:'Pepsi-Cola',price:5,count:2},
+            {name:'Coca Cola',price:3,count:1}
+        ]
+        var result = generateReceipts(codes);
+        console.log("generateReceipts:", result);
+    });
